@@ -1,0 +1,46 @@
+{
+  "name": "vue-slider",
+  "version": "1.0.0",
+  "description": "A simple vuejs 2.0+ Slider plugin.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubaidr/vue-slider.git"
+  },
+  "keywords": [
+    "vuejs",
+    "slider"
+  ],
+  "author": "Muhammad Ubaid Raza mubaidr@gmail.com",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mubaidr/vue-slider/issues"
+  },
+  "homepage": "https://github.com/mubaidr/vue-slider#readme",
+  "dependencies": {
+    "vue": "^2.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-node": "^4.2.2"
+  }
+}
