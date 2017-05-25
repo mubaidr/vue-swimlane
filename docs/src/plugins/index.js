@@ -1,4 +1,4 @@
-// import Vue from 'vue'
-// import VueSlider from '@/../../src/vue-slider'
+import Vue from 'vue'
+import VueSlider from '../../../src/'
 
-// Vue.use(VueSlider)
+Vue.use(VueSlider)
