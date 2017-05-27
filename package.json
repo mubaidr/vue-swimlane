@@ -4,9 +4,9 @@
   "description": "A simple vuejs 2.0+ Slider plugin.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "node docs/build/dev-server.js",
-    "start": "node docs/build/dev-server.js",
-    "build": "node docs/build/build-plugin.js",
+    "dev": "cd docs && node build/dev-server.js",
+    "start": "cd docs && node build/dev-server.js",
+    "build": "cd docs && node build/build-plugin.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
