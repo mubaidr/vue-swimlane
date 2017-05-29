@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/mubaidr/vue-slider#readme",
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "vue": "^2.3.3"
   },
   "devDependencies": {
