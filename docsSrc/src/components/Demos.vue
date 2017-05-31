@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-slider :class="some"></vue-slider>
+    <vue-text-slider :words="content"></vue-text-slider>
   </div>
 </template>
 
@@ -9,16 +9,8 @@
     name: 'demos',
     data () {
       return {
-        content: {
-
-        }
+        content: ['Some', 'Text', 'Sample', 'For', 'Testing']
       }
     }
   }
 </script>
-
-<style>
-  .some {
-    border: 1px solid red;
-  }
-</style>

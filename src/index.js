@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce'
-import vueSliderComponent from './vue-slider'
+import vueSliderComponent from './vue-text-slider'
 
 var mixins = {
   methods: {

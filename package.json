@@ -1,5 +1,5 @@
 {
-  "name": "vue-slider",
+  "name": "vue-text-slider",
   "version": "1.0.0",
   "description": "A simple vuejs 2.0+ Slider plugin.",
   "main": "src/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mubaidr/vue-slider.git"
+    "url": "git+https://github.com/mubaidr/vue-text-slider.git"
   },
   "keywords": [
     "vuejs",
@@ -26,9 +26,9 @@
     "url": "http://www.apache.org/licenses/LICENSE-2.0"
   }],
   "bugs": {
-    "url": "https://github.com/mubaidr/vue-slider/issues"
+    "url": "https://github.com/mubaidr/vue-text-slider/issues"
   },
-  "homepage": "https://github.com/mubaidr/vue-slider#readme",
+  "homepage": "https://github.com/mubaidr/vue-text-slider#readme",
   "dependencies": {
     "lodash.debounce": "^4.0.8",
     "vue": "^2.3.3"

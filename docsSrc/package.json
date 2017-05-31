@@ -1,7 +1,7 @@
 {
-  "name": "vue-slider-documentation",
+  "name": "vue-text-slider-documentation",
   "version": "1.0.0",
-  "description": "Documentation for vue-slider-plugin",
+  "description": "Documentation for vue-text-slider-plugin",
   "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
   "private": true,
   "main": "src/main.js",
