@@ -49,6 +49,7 @@
         return `font-size: ${this.fontSize * this.scale}px; height: ${this.itemHeight}px`
       },
       listStyle () {
+        // TODO Usetranslate for movement
         return `top: ${this.ListTop}px`
       },
       listParentStyle () {
@@ -78,10 +79,10 @@
 
 <style>
   .vue-text-slider {
-    border: 3px solid red;
     width: 100%;
     position: relative;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5)
   }
 
   .vue-text-slider ul {
@@ -93,6 +94,9 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-transition: top 0.5s ease-out;
+    -moz-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
   }
 
   .vue-text-slider ul li {
