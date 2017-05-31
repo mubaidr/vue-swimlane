@@ -16,28 +16,37 @@
       },
       rows: {
         type: Number,
-        default: 1
+        default: 3
       },
       scale: {
         type: Number,
         default: 1
       },
+      animationDuration: {
+        type: Number,
+        default: 1500
+      },
       delay: {
         type: Number,
-        default: 1000
+        default: 500
+      },
+      circular: {
+        type: Boolean,
+        default: false // TODO update
       }
     },
     data () {
       return {
         fontSize: 32,
         padding: 16,
-        ListTop: 0
+        listTop: 0,
+        moveUp: true
       }
     },
     watch: {},
     computed: {
       itemHeight () {
-        return this.fontSize * this.scale
+        return (this.fontSize * this.scale)
       },
       listHeight () {
         return this.itemHeight * this.words.length
@@ -46,57 +55,64 @@
         return this.itemHeight * this.rows
       },
       itemStyle () {
-        return `font-size: ${this.fontSize * this.scale}px; height: ${this.itemHeight}px`
+        return `font-size: ${this.itemHeight}px;
+        height: ${this.itemHeight}px`
       },
       listStyle () {
-        // TODO Usetranslate for movement
-        return `top: ${this.ListTop}px`
+        return `-webkit-transition: transform ${this.animationDuration}ms ease;
+        -moz-transition: transform  ${this.animationDuration}ms ease;
+        transition: transform  ${this.animationDuration}ms ease;
+        transform: translateY(${this.listTop}px);`
       },
       listParentStyle () {
         return `height: ${this.parentHeight}px`
       }
     },
     methods: {
+      updateState () {
+        if (this.listTop === 0) {
+          this.moveUp = true
+        }
+
+        if (this.listTop - (this.itemHeight * this.rows) <= -this.listHeight) {
+          this.moveUp = false
+        }
+
+        if (this.moveUp) {
+          this.listTop -= this.itemHeight
+        } else {
+          this.listTop += this.itemHeight
+        }
+      },
       animate () {
         this.updateState()
         setTimeout(() => {
           this.animate()
-        }, this.delay)
-      },
-      updateState () {
-        if (this.ListTop - this.itemHeight <= -this.listHeight) {
-          this.ListTop = 0
-        } else {
-          this.ListTop -= this.itemHeight
-        }
+        }, this.delay + this.animationDuration)
       }
     },
     mounted () {
-      this.animate()
+      setTimeout(() => {
+        this.animate()
+      }, this.delay)
     }
   }
 </script>
 
-<style>
+<style scoped>
   .vue-text-slider {
     width: 100%;
-    position: relative;
     overflow: hidden;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5)
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.25)
   }
 
   .vue-text-slider ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    -webkit-transition: top 0.5s ease-out;
-    -moz-transition: top 0.5s ease-out;
-    transition: top 0.5s ease-out;
+    transform: translateY(0);
+    will-change: transform;
   }
 
   .vue-text-slider ul li {
