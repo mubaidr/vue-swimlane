@@ -1,10 +1,7 @@
-import debounce from 'lodash.debounce'
 import vueSliderComponent from './vue-text-slider'
 
 var mixins = {
-  methods: {
-    _debounce: debounce
-  }
+  methods: {}
 }
 
 const vueSlider = {

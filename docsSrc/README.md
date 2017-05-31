@@ -1,6 +1,6 @@
-# vue-text-slider-demo
+# vue-text-slider
 
-> Demo for vue-text-slider-plugin
+> Home Page for vue-text-slider-plugin
 
 ## Build Setup
 
