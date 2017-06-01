@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-text-slider" :style="listParentStyle">
+  <div class="vue-swimlane" :style="listParentStyle">
     <ul :style="listStyle">
       <li :style="itemStyle" v-for="word in words">{{word}}</li>
     </ul>
@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: 'vue-text-slider',
+    name: 'vue-swimlane',
     props: {
       words: {
         type: [Array, Object],
@@ -32,7 +32,7 @@
       },
       circular: {
         type: Boolean,
-        default: false // TODO update
+        default: false
       }
     },
     data () {
@@ -40,7 +40,8 @@
         fontSize: 32,
         padding: 16,
         listTop: 0,
-        moveUp: true
+        moveUp: true,
+        resetOnNext: false
       }
     },
     watch: {},
@@ -70,12 +71,14 @@
     },
     methods: {
       updateState () {
-        if (this.listTop === 0) {
-          this.moveUp = true
+        if (this.resetOnNext) {
+          this.listTop = 0
+          this.resetOnNext = false
+          return
         }
 
-        if (this.listTop - (this.itemHeight * this.rows) <= -this.listHeight) {
-          this.moveUp = false
+        if (this.listTop === 0) {
+          this.moveUp = true
         }
 
         if (this.moveUp) {
@@ -83,6 +86,11 @@
         } else {
           this.listTop += this.itemHeight
         }
+
+        if (this.listTop - (this.itemHeight * this.rows) <= -this.listHeight) {
+          this.circular ? this.moveUp = false : this.resetOnNext = true
+        }
+
       },
       animate () {
         this.updateState()
@@ -100,13 +108,13 @@
 </script>
 
 <style scoped>
-  .vue-text-slider {
+  .vue-swimlane {
     width: 100%;
     overflow: hidden;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.25)
   }
 
-  .vue-text-slider ul {
+  .vue-swimlane ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -115,7 +123,7 @@
     will-change: transform;
   }
 
-  .vue-text-slider ul li {
+  .vue-swimlane ul li {
     padding: 0;
     margin: 0;
   }

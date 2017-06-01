@@ -1,7 +1,7 @@
 {
-  "name": "vue-text-slider",
+  "name": "vue-swimlane",
   "version": "1.0.0",
-  "description": "A simple vuejs 2.0+ Slider plugin.",
+  "description": "A simple vuejs 2.0+ swimlane plugin.",
   "main": "src/index.js",
   "scripts": {
     "dev": "cd docsSrc && node build/dev-server.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mubaidr/vue-text-slider.git"
+    "url": "git+https://github.com/mubaidr/vue-swimlane.git"
   },
   "keywords": [
     "vuejs",
@@ -28,9 +28,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/mubaidr/vue-text-slider/issues"
+    "url": "https://github.com/mubaidr/vue-swimlane/issues"
   },
-  "homepage": "https://github.com/mubaidr/vue-text-slider#readme",
+  "homepage": "https://github.com/mubaidr/vue-swimlane#readme",
   "dependencies": {
     "vue": "^2.3.3"
   },

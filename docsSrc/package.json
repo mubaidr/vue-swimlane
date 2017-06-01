@@ -1,7 +1,7 @@
 {
-  "name": "vue-text-slider-documentation",
+  "name": "vue-swimlane-documentation",
   "version": "1.0.0",
-  "description": "Documentation for vue-text-slider-plugin",
+  "description": "Documentation for vue-swimlane-plugin",
   "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
   "private": true,
   "main": "src/main.js",

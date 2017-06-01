@@ -1,6 +1,6 @@
-# vue-text-slider
+# vue-swimlane
 
-> Home Page for vue-text-slider-plugin
+> Home Page for vue-swimlane-plugin
 
 ## Build Setup
 

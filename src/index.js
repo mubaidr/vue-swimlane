@@ -1,4 +1,4 @@
-import vueSliderComponent from './vue-text-slider'
+import vueSliderComponent from './vue-swimlane'
 
 var mixins = {
   methods: {}
