@@ -15,4 +15,5 @@ new Vue({
   render: h => h(App)
 })
 
+import 'vue-material/dist/vue-material.css'
 import './assets/css/index.css'
