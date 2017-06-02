@@ -2,10 +2,12 @@
   <div id="app">
     <md-whiteframe md-tag="md-toolbar" md-elevation="3">
       <div class="md-toolbar-container custom">
-        <h1 class="md-title">Vuejs Swimlane</h1>
+        <h1 class="md-title">
+          Vuejs Swimlane</h1>
         <span style="flex: 1;">
         </span>
-        <a href="https://mubaidr.github.io">https://mubaidr.github.io</a>
+        <a href="https://mubaidr.github.io">
+          <md-icon>code</md-icon> https://mubaidr.github.io</a>
       </div>
     </md-whiteframe>
     <md-layout>

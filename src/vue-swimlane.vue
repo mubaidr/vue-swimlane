@@ -15,19 +15,19 @@
         required: true
       },
       rows: {
-        type: Number,
+        type: [Number, String],
         default: 3
       },
       scale: {
-        type: Number,
+        type: [Number, String],
         default: 1
       },
       animationDuration: {
-        type: Number,
+        type: [Number, String],
         default: 1500
       },
       delay: {
-        type: Number,
+        type: [Number, String],
         default: 500
       },
       circular: {
@@ -44,7 +44,6 @@
         resetOnNext: false
       }
     },
-    watch: {},
     computed: {
       itemHeight () {
         return (this.fontSize * this.scale)
@@ -90,7 +89,6 @@
         if (this.listTop - (this.itemHeight * this.rows) <= -this.listHeight) {
           this.circular ? this.moveUp = false : this.resetOnNext = true
         }
-
       },
       animate () {
         this.updateState()
