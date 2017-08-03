@@ -1,7 +1,7 @@
 <template>
   <div class="vue-swimlane" :style="listParentStyle">
     <ul :style="listStyle">
-      <li :style="itemStyle" v-for="word in words">{{word}}</li>
+      <li :style="itemStyle" v-for="word in words" :key="word">{{word}}</li>
     </ul>
   </div>
 </template>
@@ -65,7 +65,7 @@
         transform: translateY(${this.listTop}px);`
       },
       listParentStyle () {
-        return `height: ${this.parentHeight}px`
+        return `height: ${this.parentHeight}px; padding-top: ${this.itemHeight / 3}px`
       }
     },
     methods: {
@@ -109,6 +109,8 @@
   .vue-swimlane {
     width: 100%;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.25)
   }
 

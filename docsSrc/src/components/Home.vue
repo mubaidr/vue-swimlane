@@ -1,13 +1,10 @@
 <template>
   <div class="full-width">
-    <h1>A Word Swimlane Plugin For VueJS</h1>
-    <p>This plugin displays a list of words as a Swimlane.</p>
-    <a href="https://github.com/mubaidr/vue-swimlane">
-      <md-icon>code</md-icon> View Source Code On Github</a>
+    <p>Display a list of words as a text Swimlane.</p>
     <vue-swimlane :words="content"></vue-swimlane>
+    <a href="https://github.com/mubaidr/vue-swimlane">View Source Code On Github</a>
     <h2>Options & playground</h2>
-    <p>Change options below to see the effect. Also, you can use
-      <i>.vue-swimlane`</i> class to overrride any styles.</p>
+    <p>Change options below to see the effect. </p>
     <br/>
     <md-layout md-gutter="24">
       <md-layout>
