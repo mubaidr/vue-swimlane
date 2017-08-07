@@ -9,7 +9,7 @@
     <md-layout md-gutter="24">
       <md-layout>
         <md-input-container>
-          <label>Initial value</label>
+          <label>Text</label>
           <md-input v-model="options.text"></md-input>
         </md-input-container>
         <md-input-container>

@@ -5,7 +5,7 @@ var mixins = {
 }
 
 const vueSlider = {
-  install (Vue, options) {
+  install: function (Vue, options) {
     Vue.mixin(mixins)
     Vue.component(vueSliderComponent.name, vueSliderComponent)
   }
