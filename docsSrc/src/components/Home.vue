@@ -1,6 +1,6 @@
 <template>
   <div class="full-width">
-    <p>Display a list of words as a text Swimlane.</p>
+    <h2>Demo</h2>
     <vue-swimlane :words="content"></vue-swimlane>
     <a href="https://github.com/mubaidr/vue-swimlane">View Source Code On Github</a>
     <h2>Options & playground</h2>
@@ -55,7 +55,9 @@
     },
     computed: {
       textArray () {
-        return this.options.text.split(',')
+        return this.options.text.split(',').map(function (item) {
+          return item.trim()
+        })
       }
     }
   }
@@ -63,6 +65,7 @@
 
 <style>
   .full-width {
-    width: 100%;
+    width: 96%;
+    margin: 2%;
   }
 </style>

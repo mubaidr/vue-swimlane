@@ -3,10 +3,12 @@
     <md-whiteframe md-tag="md-toolbar" md-elevation="3">
       <div class="md-toolbar-container custom">
         <h1 class="md-title">
-          Vuejs Swimlane Plugin</h1>
+          Vuejs Swimlane Plugin:
+          <span style="opacity: 0.75">Display a list of words as a text Swimlane.</span>
+        </h1>
         <span style="flex: 1;">
         </span>
-        <a href="https://github.com/mubaidr">mubaidr @ github</a>
+        <a href="https://github.com/mubaidr" class="profile-link">mubaidr@github</a>
       </div>
     </md-whiteframe>
     <md-layout>
@@ -29,7 +31,15 @@
 
 <style>
   .md-toolbar-container.custom {
-    padding-top: 120px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 75px;
+  }
+
+  .profile-link {
+    color: #eee;
+  }
+
+  .profile-link:hover {
+    color: #fff;
   }
 </style>
