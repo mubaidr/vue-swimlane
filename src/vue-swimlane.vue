@@ -111,7 +111,6 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.25);
   }
 
   .vue-swimlane ul {

@@ -1,10 +1,9 @@
+import './pollyfills'
+import './plugins'
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-import './pollyfills'
-import './vue-material'
-import './plugins'
 
 Vue.config.productionTip = false
 
@@ -15,5 +14,5 @@ new Vue({
   render: h => h(App)
 })
 
-import 'vue-material/dist/vue-material.css'
+import './assets/css/bootstrap.css'
 import './assets/css/index.css'

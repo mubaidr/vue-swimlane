@@ -1,25 +1,13 @@
 <template>
-  <div id="app">
-    <md-whiteframe md-tag="md-toolbar" md-elevation="3">
-      <div class="md-toolbar-container custom">
-        <h1 class="md-title">
-          Vuejs Swimlane Plugin:
-          <span style="opacity: 0.75">Display a list of words as a text Swimlane.</span>
-        </h1>
-        <span style="flex: 1;">
-        </span>
-        <a href="https://github.com/mubaidr" class="profile-link">mubaidr@github</a>
-      </div>
-    </md-whiteframe>
-    <md-layout>
-      <md-layout md-hide-small md-flex="15"></md-layout>
-      <md-layout>
-        <transition appear name="slide-up" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </md-layout>
-      <md-layout md-hide-small md-flex="15"></md-layout>
-    </md-layout>
+  <div id="app" class="container">
+    <h1 class="md-title">
+      Vuejs Swimlane Plugin:
+      <span style="text-muted">Display a list of words as a text Swimlane.</span>
+    </h1>
+    <iframe src="https://ghbtns.com/github-btn.html?user=mubaidr&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+    <transition appear name="slide-up" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -29,17 +17,4 @@
   }
 </script>
 
-<style>
-  .md-toolbar-container.custom {
-    padding-top: 25px;
-    padding-bottom: 75px;
-  }
-
-  .profile-link {
-    color: #eee;
-  }
-
-  .profile-link:hover {
-    color: #fff;
-  }
-</style>
+<style></style>
