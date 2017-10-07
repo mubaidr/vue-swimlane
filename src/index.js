@@ -1,14 +1,14 @@
-import vueSliderComponent from './vue-swimlane'
+import vueSwimlaneComponent from './vue-swimlane'
 
 var mixins = {
   methods: {}
 }
 
-const vueSlider = {
-  install: function (Vue, options) {
+const vueSwimlane = {
+  install: function (Vue /*, options*/ ) {
     Vue.mixin(mixins)
-    Vue.component(vueSliderComponent.name, vueSliderComponent)
+    Vue.component(vueSwimlaneComponent.name, vueSwimlaneComponent)
   }
 }
 
-export default vueSlider
+export default vueSwimlane
