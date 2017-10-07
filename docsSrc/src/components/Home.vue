@@ -3,9 +3,12 @@
     <vue-swimlane class="demo-swimlane" :words="content" :rows="1"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
-    <p class="code">
-      &lt;vue-swimlane :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :animationDuration="options.animationDuration" :delay="options.delay"&gt;&lt;/vue-swimlane&gt;
-    </p>
+    <h4>Install</h4>
+    <code>npm install vue-swimlane --save</code>
+    <h4>Use</h4>
+    <code>
+      &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :animationDuration="duration" :delay="delay"&gt;&lt;/vue-swimlane&gt;
+    </code>
     <h3>Playground</h3>
     <p>Change options below to see the effect. </p>
     <p>

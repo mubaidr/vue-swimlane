@@ -55,8 +55,8 @@
         return this.itemHeight * this.rows
       },
       itemStyle () {
-        return `font-size: ${this.itemHeight}px;
-        height: ${this.itemHeight}px`
+        return `font-size: ${this.itemHeight}px!important;
+        height: ${this.itemHeight}px!important`
       },
       listStyle () {
         return `-webkit-transition: transform ${this.animationDuration}ms ease;
@@ -65,7 +65,7 @@
         transform: translateY(${this.listTop}px);`
       },
       listParentStyle () {
-        return `height: ${this.parentHeight}px; padding-top: ${this.itemHeight / 3}px`
+        return `height: ${this.parentHeight + this.parentHeight * 0.16}px; /*padding-top: ${this.itemHeight / 3}px*/`
       }
     },
     methods: {
