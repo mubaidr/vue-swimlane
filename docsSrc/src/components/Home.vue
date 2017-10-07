@@ -1,20 +1,16 @@
 <template>
   <div>
-    <h2>Demo</h2>
-    <vue-swimlane class="demo-swimlane" :words="content"></vue-swimlane>
+    <vue-swimlane class="demo-swimlane" :words="content" :rows="1"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
     <p class="code">
       &lt;vue-swimlane :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :animationDuration="options.animationDuration" :delay="options.delay"&gt;&lt;/vue-swimlane&gt;
     </p>
-    <iframe src="https://ghbtns.com/github-btn.html?user=mubaidr&repo=vue-swimlane&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-    <br/>
     <h3>Playground</h3>
     <p>Change options below to see the effect. </p>
     <p>
       <vue-swimlane class="playground-swimlane" :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :animationDuration="options.animationDuration" :delay="options.delay"></vue-swimlane>
     </p>
-
     <h3>Options</h3>
     <div class="row">
       <div class="col-md-6">
