@@ -3,7 +3,6 @@
     <ul :style="listStyle">
       <li :style="itemStyle" v-for="word in words" :key="word" v-html="word"></li>
     </ul>
-    <pre>{{itemScaleNormalized}}</pre>
   </div>
 </template>
 
