@@ -38,15 +38,15 @@
     data () {
       return {
         fontSize: 32,
-        padding: 16,
         listTop: 0,
         moveUp: true,
-        resetOnNext: false
+        resetOnNext: false,
+        padding: 16
       }
     },
     computed: {
       itemHeight () {
-        return (this.fontSize * this.scale)
+        return (this.fontSize * this.scale) + this.padding
       },
       listHeight () {
         return this.itemHeight * this.words.length
@@ -55,8 +55,7 @@
         return this.itemHeight * this.rows
       },
       itemStyle () {
-        return `font-size: ${this.itemHeight}px!important;
-        height: ${this.itemHeight}px!important`
+        return `font-size: ${this.itemHeight - this.padding / 2}px; line-height: ${this.itemHeight}px`
       },
       listStyle () {
         return `-webkit-transition: transform ${this.animationDuration}ms ease;
@@ -65,7 +64,7 @@
         transform: translateY(${this.listTop}px);`
       },
       listParentStyle () {
-        return `height: ${this.parentHeight + this.parentHeight * 0.16}px; /*padding-top: ${this.itemHeight / 3}px*/`
+        return `height: ${this.parentHeight}px;`
       }
     },
     methods: {
