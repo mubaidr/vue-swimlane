@@ -1,18 +1,18 @@
 <template>
   <div>
-    <vue-swimlane class="demo-swimlane" :words="content" :rows="1"></vue-swimlane>
+    <vue-swimlane class="demo-swimlane" :words="content" :rows="1" :pauseOnHover="true"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
     <h4>Install</h4>
     <code>npm install vue-swimlane --save</code>
     <h4>Use</h4>
     <code>
-      &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition"&gt;&lt;/vue-swimlane&gt;
+      &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"&gt;&lt;/vue-swimlane&gt;
     </code>
     <h3>Playground</h3>
     <p>Change options below to see the effect. </p>
     <p>
-      <vue-swimlane class="playground-swimlane" :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :transitionDuration="options.transitionDuration" :transitionDelay="options.transitionDelay" :transition="options.transition"></vue-swimlane>
+      <vue-swimlane class="playground-swimlane" :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :transitionDuration="options.transitionDuration" :transitionDelay="options.transitionDelay" :transition="options.transition" :pauseOnHover="options.pauseOnHover"></vue-swimlane>
     </p>
     <h3>Options</h3>
     <div class="row">
@@ -30,6 +30,15 @@
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" value="true" v-model="options.circular"> Circular?
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="true" v-model="options.pauseOnHover"> Pause On Hover?
                   </label>
                 </div>
               </div>
@@ -71,9 +80,13 @@
         <ul class="list-group">
           <li class="list-group-item">
             <strong>words</strong> - string[] -
-            <i>required</i>: Array of tags or words to be used on display.</li>
+            <i>required</i>: Array of tags or words to be used on display.<br/>
+            <strong>Supports HTML content!</strong>
+          </li>
           <li class="list-group-item">
             <strong>circular</strong> - bool (Default: false): If true, list starts from the top after completion.</li>
+          <li class="list-group-item">
+            <strong>pauseOnHover</strong> - bool (Default: false): If true, animation will pause on mouse hover.</li>
           <li class="list-group-item">
             <strong>rows</strong> - int (Default: 1): Number of rows always visible at a time.</li>
           <li class="list-group-item">
@@ -95,10 +108,11 @@
     name: 'home',
     data () {
       return {
-        content: ['Awesome', 'swimlane', 'plugin', 'for', 'awesome', 'VueJS'],
+        content: ['Awesome', 'swimlane', 'plugin', 'for', 'awesome', '<a href="https://vuejs.org">VueJS</a>'],
         options: {
           text: 'This plugin displays a list of words as a Swimlane',
           circular: true,
+          pauseOnHover: false,
           rows: 3,
           scale: 2,
           transitionDuration: 2000,

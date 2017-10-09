@@ -1,7 +1,7 @@
 <template>
-  <div class="vue-swimlane" :style="listParentStyle">
+  <div class="vue-swimlane" :style="listParentStyle" @mouseenter="stopAnimation" @mouseleave="startAnimation">
     <ul :style="listStyle">
-      <li :style="itemStyle" v-for="word in words" :key="word">{{capitalize(word)}}</li>
+      <li :style="itemStyle" v-for="word in words" :key="word" v-html="word"></li>
     </ul>
     <pre>{{itemScaleNormalized}}</pre>
   </div>
@@ -38,8 +38,11 @@
       circular: {
         type: Boolean,
         default: false
+      },
+      pauseOnHover: {
+        type: Boolean,
+        default: false
       }
-      //TODO add option to pause on mouse hover
     },
     data () {
       return {
@@ -47,7 +50,8 @@
         listTop: 0,
         moveUp: true,
         resetOnNext: false,
-        padding: 16
+        padding: 16,
+        isPaused: true
       }
     },
     computed: {
@@ -108,20 +112,34 @@
         }
       },
       animate () {
+        if (this.isPaused) return false
+
         this.updateState()
         setTimeout(() => {
           this.animate()
         }, this.transitionDelayNormalized + this.transitionDurationNormalized)
+      },
+      startAnimation () {
+        if (this.isPaused) {
+          this.isPaused = false
+
+          if (this.words.length > this.itemRowsNormalized) {
+            this.$nextTick(() => {
+              setTimeout(() => {
+                this.animate()
+              }, this.transitionDelayNormalized)
+            })
+          }
+        }
+      },
+      stopAnimation () {
+        if (this.pauseOnHover) {
+          this.isPaused = true
+        }
       }
     },
     mounted () {
-      if (this.words.length > this.itemRowsNormalized) {
-        this.$nextTick(() => {
-          setTimeout(() => {
-            this.animate()
-          }, this.transitionDelayNormalized)
-        })
-      }
+      this.startAnimation()
     }
   }
 </script>
@@ -146,5 +164,10 @@
   .vue-swimlane ul li {
     padding: 0;
     margin: 0;
+  }
+
+  .vue-swimlane ul li a {
+    color: #fff!important;
+    text-decoration: underline;
   }
 </style>
