@@ -1,8 +1,9 @@
 <template>
   <div class="vue-swimlane" :style="listParentStyle">
     <ul :style="listStyle">
-      <li :style="itemStyle" v-for="word in words" :key="word">{{word}}</li>
+      <li :style="itemStyle" v-for="word in words" :key="word">{{capitalize(word)}}</li>
     </ul>
+    <pre>{{itemScaleNormalized}}</pre>
   </div>
 </template>
 
@@ -11,33 +12,38 @@
     name: 'vue-swimlane',
     props: {
       words: {
-        type: [Array, Object],
+        type: Array,
         required: true
       },
       rows: {
-        type: [Number, String],
-        default: 3
-      },
-      scale: {
-        type: [Number, String],
+        type: Number,
         default: 1
       },
-      animationDuration: {
-        type: [Number, String],
-        default: 1500
+      scale: {
+        type: Number,
+        default: 1
       },
-      delay: {
-        type: [Number, String],
+      transitionDuration: {
+        type: Number,
         default: 500
+      },
+      transitionDelay: {
+        type: Number,
+        default: 250
+      },
+      transition: {
+        type: String,
+        default: 'ease-out'
       },
       circular: {
         type: Boolean,
         default: false
       }
+      //TODO add option to pause on mouse hover
     },
     data () {
       return {
-        fontSize: 32,
+        fontSize: 16,
         listTop: 0,
         moveUp: true,
         resetOnNext: false,
@@ -45,29 +51,41 @@
       }
     },
     computed: {
+      transitionDelayNormalized () {
+        return Math.abs(this.transitionDelay || 250)
+      },
+      transitionDurationNormalized () {
+        return Math.abs(this.transitionDuration || 250)
+      },
+      itemScaleNormalized () {
+        return Math.abs(this.scale || 1)
+      },
+      itemRowsNormalized () {
+        return this.rows > this.words.length ? this.words.length : Math.abs(this.rows || 1)
+      },
       itemHeight () {
-        return (this.fontSize * this.scale) + this.padding
+        return (this.fontSize * this.itemScaleNormalized) + this.padding
+      },
+      itemStyle () {
+        return `font-size: ${this.itemHeight - this.padding / 2}px!important; line-height: ${this.itemHeight}px!important;`
       },
       listHeight () {
         return this.itemHeight * this.words.length
       },
-      parentHeight () {
-        return this.itemHeight * this.rows
-      },
-      itemStyle () {
-        return `font-size: ${this.itemHeight - this.padding / 2}px; line-height: ${this.itemHeight}px`
-      },
       listStyle () {
-        return `-webkit-transition: transform ${this.animationDuration}ms ease;
-        -moz-transition: transform  ${this.animationDuration}ms ease;
-        transition: transform  ${this.animationDuration}ms ease;
-        transform: translateY(${this.listTop}px);`
+        return `-webkit-transition: transform ${this.transitionDurationNormalized}ms ${this.transition}!important;
+        -moz-transition: transform  ${this.transitionDurationNormalized}ms ${this.transition}!important;
+        transition: transform  ${this.transitionDurationNormalized}ms ${this.transition}!important;
+        transform: translateY(${this.listTop}px)!important;`
       },
       listParentStyle () {
-        return `height: ${this.parentHeight}px;`
+        return `height: ${this.itemHeight * this.itemRowsNormalized}px!important;`
       }
     },
     methods: {
+      capitalize (str) {
+        return str.replace(/\b\w/g, l => l.toUpperCase())
+      },
       updateState () {
         if (this.resetOnNext) {
           this.listTop = 0
@@ -85,7 +103,7 @@
           this.listTop += this.itemHeight
         }
 
-        if (this.listTop - (this.itemHeight * this.rows) <= -this.listHeight) {
+        if (this.listTop - (this.itemHeight * this.itemRowsNormalized) <= -this.listHeight) {
           this.circular ? this.moveUp = false : this.resetOnNext = true
         }
       },
@@ -93,13 +111,17 @@
         this.updateState()
         setTimeout(() => {
           this.animate()
-        }, this.delay + this.animationDuration)
+        }, this.transitionDelayNormalized + this.transitionDurationNormalized)
       }
     },
     mounted () {
-      setTimeout(() => {
-        this.animate()
-      }, this.delay)
+      if (this.words.length > this.itemRowsNormalized) {
+        this.$nextTick(() => {
+          setTimeout(() => {
+            this.animate()
+          }, this.transitionDelayNormalized)
+        })
+      }
     }
   }
 </script>

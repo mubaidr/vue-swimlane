@@ -8,15 +8,17 @@
         <iframe src="https://ghbtns.com/github-btn.html?user=mubaidr&repo=vue-swimlane&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
       </p>
     </div>
-    <transition appear name="slide-up" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <home></home>
   </div>
 </template>
 
 <script>
+  import home from './components/Home'
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      home
+    }
   }
 </script>
 

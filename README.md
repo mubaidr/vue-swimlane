@@ -10,15 +10,16 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p
 
 Easy peasy
 
-```<vue-swimlane :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :animationDuration="options.animationDuration" :delay="options.delay"></vue-swimlane>```
+```<vue-swimlane :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :transitionDuration="options.transitionDuration" :transitionDelay="options.transitionDelay" :transition="options.transition"></vue-swimlane>```
 
 ## Options
 
 Following options can be passed as props.
 
-* words - string[]: Array of tags or words to be used on display.
-* rows - int: Number of rows always visible at a time.
-* scale - float: Set size for the display container.
-* animationDuration - float in ms: Animation duration for rows.
-* delay - float in ms: Delays between each animation duration.
-* circular - boolean: If false, animation will start from top after completion.
+* <strong>words</strong> - string[] - <i>required</i>: Array of tags or words to be used on display.
+* <strong>circular</strong> - bool (Default: false): If true, list starts from the top after completion.
+* <strong>rows</strong> - int (Default: 1): Number of rows always visible at a time.
+* <strong>scale</strong> - float (Default: 1): Font size scaling relative to 16px.
+* <strong>transitionDuration</strong> - float in ms (Default: 500): Animation duration for rows.
+* <strong>transitionDelay</strong> - float in ms (Default: 250): Delays between each animation duration.
+* <strong>transition</strong> - string (Default: ease-out): css transition name.

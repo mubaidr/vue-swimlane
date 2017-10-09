@@ -7,12 +7,12 @@
     <code>npm install vue-swimlane --save</code>
     <h4>Use</h4>
     <code>
-      &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :animationDuration="duration" :delay="delay"&gt;&lt;/vue-swimlane&gt;
+      &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition"&gt;&lt;/vue-swimlane&gt;
     </code>
     <h3>Playground</h3>
     <p>Change options below to see the effect. </p>
     <p>
-      <vue-swimlane class="playground-swimlane" :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :animationDuration="options.animationDuration" :delay="options.delay"></vue-swimlane>
+      <vue-swimlane class="playground-swimlane" :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :transitionDuration="options.transitionDuration" :transitionDelay="options.transitionDelay" :transition="options.transition"></vue-swimlane>
     </p>
     <h3>Options</h3>
     <div class="row">
@@ -26,30 +26,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-2 control-label">Rows</label>
-              <div class="col-lg-10">
-                <input type="number" class="form-control" v-model="options.rows">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-2 control-label">Scale</label>
-              <div class="col-lg-10">
-                <input type="number" class="form-control" v-model="options.scale">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-2 control-label">Animation Duration</label>
-              <div class="col-lg-10">
-                <input type="number" class="form-control" v-model="options.animationDuration">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-2 control-label">Delay</label>
-              <div class="col-lg-10">
-                <input type="number" class="form-control" v-model="options.delay">
-              </div>
-            </div>
-            <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
                 <div class="checkbox">
                   <label>
@@ -58,17 +34,56 @@
                 </div>
               </div>
             </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Rows</label>
+              <div class="col-lg-10">
+                <input type="number" class="form-control" v-model.number="options.rows">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Scale</label>
+              <div class="col-lg-10">
+                <input type="number" class="form-control" v-model.number="options.scale">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Transition Duration</label>
+              <div class="col-lg-10">
+                <input type="number" class="form-control" v-model.number="options.transitionDuration">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Transition Delay</label>
+              <div class="col-lg-10">
+                <input type="number" class="form-control" v-model.number="options.transitionDelay">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Transition</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" v-model="options.transition">
+              </div>
+            </div>
           </fieldset>
         </form>
       </div>
       <div class="col-md-6">
-        <ul>
-          <li>words - string[]: Array of tags or words to be used on display.</li>
-          <li>rows - int: Number of rows always visible at a time.</li>
-          <li>scale - float: Set size for the display container.</li>
-          <li>animationDuration - float in ms: Animation duration for rows.</li>
-          <li>delay - float in ms: Delays between each animation duration.</li>
-          <li>circular - boolean: If false, animation will start from top after completion.</li>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>words</strong> - string[] -
+            <i>required</i>: Array of tags or words to be used on display.</li>
+          <li class="list-group-item">
+            <strong>circular</strong> - bool (Default: false): If true, list starts from the top after completion.</li>
+          <li class="list-group-item">
+            <strong>rows</strong> - int (Default: 1): Number of rows always visible at a time.</li>
+          <li class="list-group-item">
+            <strong>scale</strong> - float (Default: 1): Font size scaling relative to 16px.</li>
+          <li class="list-group-item">
+            <strong>transitionDuration</strong> - float in ms (Default: 500): Animation duration for rows.</li>
+          <li class="list-group-item">
+            <strong>transitionDelay</strong> - float in ms (Default: 250): Delays between each animation duration.</li>
+          <li class="list-group-item">
+            <strong>transition</strong> - string (Default: ease-out): css transition name.</li>
         </ul>
       </div>
     </div>
@@ -80,14 +95,15 @@
     name: 'home',
     data () {
       return {
-        content: ['This', 'is', 'awesome', 'swimlane', 'plugin', 'for', 'awesome', 'VueJS'],
+        content: ['Awesome', 'swimlane', 'plugin', 'for', 'awesome', 'VueJS'],
         options: {
-          text: 'This plugin displays a list of words as a Swimlane.',
+          text: 'This plugin displays a list of words as a Swimlane',
           circular: true,
           rows: 3,
           scale: 2,
-          animationDuration: 1000,
-          delay: 500
+          transitionDuration: 2000,
+          transitionDelay: 100,
+          transition: 'ease-in-out'
         }
       }
     },
