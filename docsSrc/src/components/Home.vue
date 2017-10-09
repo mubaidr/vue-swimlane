@@ -100,6 +100,17 @@
         </ul>
       </div>
     </div>
+    <h3>Styles?</h3>
+    <p>Almost all the styling can be applied using your own class or using default class name
+      <code>vue-swimlane</code> except anything that effects the height of the text or the field.
+      <br/>
+      <strong>To change height or font-size</strong> please use the integrated option
+      <code>scale</code>
+    </p>
+    <h3>Found any bug or feature request?
+      <a href="https://github.com/mubaidr/vue-swimlane/issues">Report Here!</a>
+    </h3>
+    <br/>
   </div>
 </template>
 
@@ -148,5 +159,16 @@
     border-radius: 4px;
     background-color: #c7254e;
     color: #fff;
+  }
+
+  .vue-swimlane a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+
+  .vue-swimlane a:hover {
+    color: #eee;
+    text-decoration: underline;
   }
 </style>

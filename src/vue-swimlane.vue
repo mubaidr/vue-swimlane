@@ -165,9 +165,4 @@
     padding: 0;
     margin: 0;
   }
-
-  .vue-swimlane ul li a {
-    color: #fff!important;
-    text-decoration: underline;
-  }
 </style>
