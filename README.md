@@ -1,6 +1,6 @@
 # vue-swimlane
 
-An Text Swimlane plugin for Vue.js in alpha stage. :p
+An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as aan animated text Swimlane.
 
 ## Demo
 
@@ -8,9 +8,13 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p
 
 ## How to use
 
-Easy peasy
+### Install
 
-```<vue-swimlane :words="textArray" :circular="options.circular" :rows="options.rows" :scale="options.scale" :transitionDuration="options.transitionDuration" :transitionDelay="options.transitionDelay" :transition="options.transition"></vue-swimlane>```
+```npm install vue-swimlane --save```
+
+### Use
+
+```<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>```
 
 ## Options
 
