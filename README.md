@@ -12,6 +12,10 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as
 
 ```npm install vue-swimlane --save```
 
+### Plug in your main.js or where required
+
+import 'vue-swimlane'
+
 ### Use
 
 ```<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>```
