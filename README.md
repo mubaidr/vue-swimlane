@@ -14,7 +14,7 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as
 
 ### Plug in your main.js or where required
 
-import 'vue-swimlane'
+```import 'vue-swimlane'```
 
 ### Use
 
