@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-swimlane class="demo-swimlane" :words="content" :rows="1" :pauseOnHover="true"></vue-swimlane>
+    <vue-swimlane class="demo-swimlane" :words="content" :scale="2"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
     <h4>Install</h4>
@@ -125,8 +125,8 @@
           circular: true,
           pauseOnHover: false,
           rows: 3,
-          scale: 2,
-          transitionDuration: 2000,
+          scale: 1,
+          transitionDuration: 1000,
           transitionDelay: 100,
           transition: 'ease-in-out'
         }

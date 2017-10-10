@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-swimlane" :style="listParentStyle" @mouseenter="stopAnimation" @mouseleave="startAnimation">
+  <div class="vue-swimlane" :style="listParentStyle" @mouseenter="toggleAnimation" @mouseleave="toggleAnimation">
     <ul :style="listStyle">
       <li :style="itemStyle" v-for="word in words" :key="word" v-html="word"></li>
     </ul>
@@ -50,7 +50,7 @@
         moveUp: true,
         resetOnNext: false,
         padding: 16,
-        isPaused: true
+        isPaused: false
       }
     },
     computed: {
@@ -111,34 +111,22 @@
         }
       },
       animate () {
-        if (this.isPaused) return false
-
-        this.updateState()
-        setTimeout(() => {
-          this.animate()
-        }, this.transitionDelayNormalized + this.transitionDurationNormalized)
-      },
-      startAnimation () {
-        if (this.isPaused) {
-          this.isPaused = false
-
-          if (this.words.length > this.itemRowsNormalized) {
-            this.$nextTick(() => {
-              setTimeout(() => {
-                this.animate()
-              }, this.transitionDelayNormalized)
-            })
-          }
+        if (!this.isPaused && this.words.length > this.itemRowsNormalized) {
+          this.$nextTick(() => {
+            setTimeout(() => {
+              this.updateState()
+              this.animate()
+            }, this.transitionDelayNormalized + this.transitionDurationNormalized)
+          })
         }
       },
-      stopAnimation () {
-        if (this.pauseOnHover) {
-          this.isPaused = true
-        }
+      toggleAnimation () {
+        this.isPaused = !this.isPaused
+        this.animate()
       }
     },
     mounted () {
-      this.startAnimation()
+      this.animate()
     }
   }
 </script>
