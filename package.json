@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/mubaidr/vue-swimlane#readme",
   "dependencies": {
-    "vue": "^2.4.4"
+    "vue": "^2.4.4",
+    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

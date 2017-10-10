@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-swimlane" :style="listParentStyle" @mouseenter="toggleAnimation" @mouseleave="toggleAnimation">
+  <div class="vue-swimlane" :style="listParentStyle" @mouseenter="throttleToggleAnimation" @mouseleave="throttleToggleAnimation">
     <ul :style="listStyle">
       <li :style="itemStyle" v-for="word in words" :key="word" v-html="word"></li>
     </ul>
@@ -7,6 +7,8 @@
 </template>
 
 <script>
+  import * as debounce from 'lodash.debounce'
+
   export default {
     name: 'vue-swimlane',
     props: {
@@ -50,7 +52,8 @@
         moveUp: true,
         resetOnNext: false,
         padding: 16,
-        isPaused: false
+        isPaused: false,
+        updatetimeoutId: null
       }
     },
     computed: {
@@ -112,17 +115,19 @@
       },
       animate () {
         if (!this.isPaused && this.words.length > this.itemRowsNormalized) {
-          this.$nextTick(() => {
-            setTimeout(() => {
-              this.updateState()
-              this.animate()
-            }, this.transitionDelayNormalized + this.transitionDurationNormalized)
-          })
+          this.updatetimeoutId = setTimeout(() => {
+            this.updateState()
+            this.animate()
+          }, this.transitionDelayNormalized + this.transitionDurationNormalized)
         }
       },
       toggleAnimation () {
         this.isPaused = !this.isPaused
         this.animate()
+      },
+      throttleToggleAnimation () {
+        clearTimeout(this.updatetimeoutId)
+        debounce(this.toggleAnimation, this.transitionDelayNormalized, { leading: true })()
       }
     },
     mounted () {
