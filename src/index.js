@@ -1,14 +1,13 @@
 import vueSwimlaneComponent from './vue-swimlane'
 
-var mixins = {
-  methods: {}
-}
-
 const vueSwimlane = {
-  install: function (Vue /*, options*/ ) {
-    Vue.mixin(mixins)
+  install: function (Vue) {
     Vue.component(vueSwimlaneComponent.name, vueSwimlaneComponent)
   }
 }
 
 export default vueSwimlane
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(vueSwimlane)
+}
