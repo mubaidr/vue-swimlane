@@ -3,8 +3,11 @@
     <vue-swimlane class="demo-swimlane" :words="content" :scale="2"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
-    <h4>Install</h4>
+    <h4>Install using npm</h4>
     <code>npm install vue-swimlane --save</code>
+    <code>import Vue from 'vue'</code><br>
+    <code>import Swimlane from 'vue-swimlane'</code><br>
+    <code>Vue.use(Swimlane)</code><br>
     <h4>Use</h4>
     <code>
       &lt;vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"&gt;&lt;/vue-swimlane&gt;
