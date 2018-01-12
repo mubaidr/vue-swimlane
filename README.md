@@ -12,28 +12,26 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as
 
 ### Install
 
-```npm install vue-swimlane --save```
+`npm install vue-swimlane --save`
 
 ### Plug in your main.js or where required
 
 ```javascript
-
 import Vue from 'vue'
 import Swimlane from 'vue-swimlane'
 
 Vue.use(Swimlane)
-
 ```
 
 ### Use
 
-```<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>```
+`<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>`
 
 ## Options
 
 Following options can be passed as props.
 
-* **words** - string[] - *required*: Array of tags or words to be used on display.
+* **words** - string[] - _required_: Array of tags or words to be used on display.
 * **circular** - bool (Default: false): If true, list starts from the top after completion.
 * **pauseOnHover** - bool (Default: false): If true, animation will pause on mouse hover.
 * **rows** - int (Default: 1): Number of rows always visible at a time.

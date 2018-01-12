@@ -1,7 +1,7 @@
 import vueSwimlaneComponent from './vue-swimlane'
 
 const vueSwimlane = {
-  install: function (Vue) {
+  install: function(Vue) {
     Vue.component(vueSwimlaneComponent.name, vueSwimlaneComponent)
   }
 }

@@ -3,8 +3,9 @@
     <vue-swimlane class="demo-swimlane" :words="content" :scale="2"></vue-swimlane>
     <br/>
     <h3>How to use</h3>
-    <h4>Install using npm</h4>
-    <code>npm install vue-swimlane --save</code>
+    <h4>Install</h4>
+    <code>npm install vue-swimlane --save</code><br><br>
+    <h4>Import</h4>
     <code>import Vue from 'vue'</code><br>
     <code>import Swimlane from 'vue-swimlane'</code><br>
     <code>Vue.use(Swimlane)</code><br>
@@ -120,9 +121,16 @@
 <script>
   export default {
     name: 'home',
-    data () {
+    data() {
       return {
-        content: ['Awesome', 'swimlane', 'plugin', 'for', 'awesome', '<a href="https://vuejs.org">VueJS</a>'],
+        content: [
+          'Awesome',
+          'swimlane',
+          'plugin',
+          'for',
+          'awesome',
+          '<a href="https://vuejs.org">VueJS</a>'
+        ],
         options: {
           text: 'This plugin displays a list of words as a Swimlane',
           circular: true,
@@ -136,8 +144,8 @@
       }
     },
     computed: {
-      textArray () {
-        return this.options.text.split(' ').map(function (item) {
+      textArray() {
+        return this.options.text.split(' ').map(function(item) {
           return item.trim()
         })
       }
@@ -168,7 +176,6 @@
     color: #fff;
     text-decoration: underline;
   }
-
 
   .vue-swimlane a:hover {
     color: #eee;
