@@ -45,7 +45,7 @@
         default: false
       }
     },
-    data () {
+    data() {
       return {
         fontSize: 16,
         listTop: 0,
@@ -57,42 +57,49 @@
       }
     },
     computed: {
-      transitionDelayNormalized () {
+      transitionDelayNormalized() {
         return Math.abs(this.transitionDelay || 250)
       },
-      transitionDurationNormalized () {
+      transitionDurationNormalized() {
         return Math.abs(this.transitionDuration || 250)
       },
-      itemScaleNormalized () {
+      itemScaleNormalized() {
         return Math.abs(this.scale || 1)
       },
-      itemRowsNormalized () {
-        return this.rows > this.words.length ? this.words.length : Math.abs(this.rows || 1)
+      itemRowsNormalized() {
+        return this.rows > this.words.length
+          ? this.words.length
+          : Math.abs(this.rows || 1)
       },
-      itemHeight () {
-        return (this.fontSize * this.itemScaleNormalized) + this.padding
+      itemHeight() {
+        return this.fontSize * this.itemScaleNormalized + this.padding
       },
-      itemStyle () {
-        return `font-size: ${this.itemHeight - this.padding / 2}px!important; line-height: ${this.itemHeight}px!important;`
+      itemStyle() {
+        return `font-size: ${this.itemHeight -
+          this.padding / 2}px!important; line-height: ${this
+          .itemHeight}px!important;`
       },
-      listHeight () {
+      listHeight() {
         return this.itemHeight * this.words.length
       },
-      listStyle () {
-        return `-webkit-transition: transform ${this.transitionDurationNormalized}ms ${this.transition}!important;
-        -moz-transition: transform  ${this.transitionDurationNormalized}ms ${this.transition}!important;
-        transition: transform  ${this.transitionDurationNormalized}ms ${this.transition}!important;
-        transform: translateY(${this.listTop}px)!important;`
+      listStyle() {
+        return `-webkit-transition: transform ${this
+          .transitionDurationNormalized}ms ${this.transition}!important;
+            -moz-transition: transform  ${this
+              .transitionDurationNormalized}ms ${this.transition}!important;
+            transition: transform  ${this.transitionDurationNormalized}ms ${this
+          .transition}!important;
+            transform: translateY(${this.listTop}px)!important;`
       },
-      listParentStyle () {
+      listParentStyle() {
         return `height: ${this.itemHeight * this.itemRowsNormalized}px!important;`
       }
     },
     methods: {
-      capitalize (str) {
+      capitalize(str) {
         return str.replace(/\b\w/g, l => l.toUpperCase())
       },
-      updateState () {
+      updateState() {
         if (this.resetOnNext) {
           this.listTop = 0
           this.resetOnNext = false
@@ -109,11 +116,14 @@
           this.listTop += this.itemHeight
         }
 
-        if (this.listTop - (this.itemHeight * this.itemRowsNormalized) <= -this.listHeight) {
-          this.circular ? this.moveUp = false : this.resetOnNext = true
+        if (
+          this.listTop - this.itemHeight * this.itemRowsNormalized <=
+          -this.listHeight
+        ) {
+          this.circular ? (this.moveUp = false) : (this.resetOnNext = true)
         }
       },
-      animate () {
+      animate() {
         if (!this.isPaused && this.words.length > this.itemRowsNormalized) {
           this.updatetimeoutId = setTimeout(() => {
             this.updateState()
@@ -121,22 +131,24 @@
           }, this.transitionDelayNormalized + this.transitionDurationNormalized)
         }
       },
-      toggleAnimation () {
+      toggleAnimation() {
         this.isPaused = !this.isPaused
         this.animate()
       },
-      throttleToggleAnimation () {
+      throttleToggleAnimation() {
         clearTimeout(this.updatetimeoutId)
-        debounce(this.toggleAnimation, this.transitionDelayNormalized, { leading: true })()
+        debounce(this.toggleAnimation, this.transitionDelayNormalized, {
+          leading: true
+        })()
       }
     },
-    mounted () {
+    mounted() {
       this.animate()
     }
   }
 </script>
 
-<style scoped>
+<style>
   .vue-swimlane {
     width: 100%;
     overflow: hidden;

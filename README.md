@@ -14,6 +14,13 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as
 
 `npm install vue-swimlane --save`
 
+Or
+
+```html
+<link rel="stylesheet" href="vue-swimlane.css"/>
+<script src="vue-swimlane.js"></script>
+```
+
 ### Plug in your main.js or where required
 
 ```javascript
