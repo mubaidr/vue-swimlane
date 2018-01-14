@@ -4,18 +4,13 @@
   "description": "A simple vuejs 2.0+ text swimlane plugin.",
   "main": "src/index.js",
   "scripts": {
-    "build:min": "cross-env MINIFY=true webpack --progress --config build/webpack.prod.plugin.conf.js",
-    "build:full": "cross-env MINIFY=false webpack --progress --config build/webpack.prod.plugin.conf.js",
     "build": "npm run build:min && npm run build:full"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mubaidr/vue-swimlane.git"
   },
-  "keywords": [
-    "vuejs",
-    "swimlane"
-  ],
+  "keywords": ["vuejs", "swimlane"],
   "author": "Muhammad Ubaid Raza mubaidr@gmail.com",
   "licenses": [
     {
@@ -56,10 +51,5 @@
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.13"
   },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "package.json",
-    "src/"
-  ]
+  "files": ["LICENSE", "README.md", "package.json", "src/"]
 }
