@@ -6,11 +6,10 @@
     <h4>Install</h4>
     <code>npm install vue-swimlane --save</code><br><br>
     <h4>Include in HTML</h4>
-    <code>
+    <pre><![CDATA[
       <link rel="stylesheet" href="vue-swimlane.css"/>
-      <br/>
       <script src="vue-swimlane.js"></script>
-    </code>
+    ]]></pre>
     <h4>Import</h4>
     <code>import Vue from 'vue'</code><br>
     <code>import Swimlane from 'vue-swimlane'</code><br>
