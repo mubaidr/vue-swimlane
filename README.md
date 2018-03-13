@@ -1,5 +1,7 @@
 # vue-swimlane
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mubaidr/vue-swimlane.svg)](https://greenkeeper.io/)
+
 An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as aan animated text Swimlane.
 
 [![NPM](https://nodei.co/npm/vue-swimlane.png?compact=true)](https://npmjs.org/package/vue-swimlane)
