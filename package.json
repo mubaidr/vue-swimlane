@@ -27,7 +27,7 @@
     "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^8.6.4",
     "babel-brunch": "^6.1.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
