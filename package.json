@@ -55,7 +55,7 @@
     "eslint-plugin-vue": "beta",
     "uglify-js-brunch": "^2.0.0",
     "vue-brunch": "^2.0.1",
-    "vue-loader": "^13.7.0",
+    "vue-loader": "^15.4.1",
     "vue-style-loader": "^4.1.1",
     "vue-template-compiler": "^2.5.13"
   },
