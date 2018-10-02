@@ -51,7 +51,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "beta",
     "uglify-js-brunch": "^2.0.0",
     "vue-brunch": "^2.0.1",
