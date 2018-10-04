@@ -31,7 +31,7 @@ Vue.use(VueSwimlane)
 
 ### Markup
 
-`<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>`
+`<vue-swimlane :words="['Some', 'Keywords', 'Array', 'And Thats it!']"></vue-swimlane>`
 
 ## Options
 
