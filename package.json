@@ -33,7 +33,7 @@
     "LICENSE",
     "README.md",
     "package.json",
-    "src/",
+    "src/component",
     "dist/"
   ],
   "homepage": "https://github.com/mubaidr/vue-swimlane#readme",
@@ -61,5 +61,5 @@
     "dev": "cd src/docs && npm run dev && cd ../..",
     "lint": "eslint --ext .js,.vue --fix ./src/"
   },
-  "version": "0.3.6"
+  "version": "0.3.7"
 }
