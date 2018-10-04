@@ -1,6 +1,6 @@
 # vue-swimlane
 
-An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as aan animated text Swimlane.
+A Text Swimlane plugin for Vue.js to display a list of words as an animated text Swimlane.
 
 [![NPM](https://nodei.co/npm/vue-swimlane.png?compact=true)](https://npmjs.org/package/vue-swimlane)
 
@@ -10,27 +10,26 @@ An Text Swimlane plugin for Vue.js in alpha stage. :p Display a list of words as
 
 ## How to use
 
-### Install
+### Install using npm
 
 `npm install vue-swimlane --save`
 
-Or
-
-```html
-<link rel="stylesheet" href="vue-swimlane.css"/>
-<script src="vue-swimlane.js"></script>
-```
-
-### Plug in your main.js or where required
+#### Plug in your main.js or where required
 
 ```javascript
 import Vue from 'vue'
-import Swimlane from 'vue-swimlane'
+import VueSwimlane from 'vue-swimlane'
 
-Vue.use(Swimlane)
+Vue.use(VueSwimlane)
 ```
 
-### Use
+### use CDN
+
+```html
+<script src="https://unpkg.com/vue-swimlane/dist/vue-swimlane.min.js"></script>
+```
+
+### Markup
 
 `<vue-swimlane :words="wordsArray" :circular="circular" :rows="rows" :scale="scale" :transitionDuration="duration" :transitionDelay="delay" :transition="transition" :pauseOnHover="true"></vue-swimlane>`
 
@@ -38,11 +37,11 @@ Vue.use(Swimlane)
 
 Following options can be passed as props.
 
-* **words** - string[] - _required_: Array of tags or words to be used on display.
-* **circular** - bool (Default: false): If true, list starts from the top after completion.
-* **pauseOnHover** - bool (Default: false): If true, animation will pause on mouse hover.
-* **rows** - int (Default: 1): Number of rows always visible at a time.
-* **scale** - float (Default: 1): Font size scaling relative to 16px.
-* **transitionDuration** - float in ms (Default: 500): Animation duration for rows.
-* **transitionDelay** - float in ms (Default: 250): Delays between each animation duration.
-* **transition** - string (Default: ease-out): css transition name.
+- **words** - string[] - _required_: Array of tags or words to be used on display.
+- **circular** - bool (Default: false): If true, list starts from the top after completion.
+- **pauseOnHover** - bool (Default: false): If true, animation will pause on mouse hover.
+- **rows** - int (Default: 1): Number of rows always visible at a time.
+- **scale** - float (Default: 1): Font size scaling relative to 16px.
+- **transitionDuration** - float in ms (Default: 500): Animation duration for rows.
+- **transitionDelay** - float in ms (Default: 250): Delays between each animation duration.
+- **transition** - string (Default: ease-out): css transition name.

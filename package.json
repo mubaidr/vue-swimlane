@@ -1,68 +1,65 @@
 {
-  "name": "vue-swimlane",
-  "version": "0.3.6",
-  "description": "A simple vuejs 2.0+ text swimlane plugin.",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "brunch build --production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mubaidr/vue-swimlane.git"
-  },
-  "keywords": [
-    "vuejs",
-    "swimlane"
-  ],
   "author": "Muhammad Ubaid Raza mubaidr@gmail.com",
-  "licenses": [{
-    "type": "Apache-2.0",
-    "url": "http://www.apache.org/licenses/LICENSE-2.0"
-  }],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "bugs": {
     "url": "https://github.com/mubaidr/vue-swimlane/issues"
   },
-  "homepage": "https://github.com/mubaidr/vue-swimlane#readme",
   "dependencies": {
     "lodash.debounce": "^4.0.8"
   },
+  "description": "A simple vuejs 2.0+ text swimlane plugin.",
   "devDependencies": {
-    "autoprefixer": "^9.0.2",
-    "babel-brunch": "^6.1.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-istanbul": "^4.1.5",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "brunch": "^2.4.0",
-    "clean-css-brunch": "^2.0.0",
-    "cross-env": "^5.1.3",
-    "css-brunch": "^2.0.0",
-    "css-loader": "^1.0.0",
-    "eslint": "^5.0.1",
-    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-html": "^4.0.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "beta",
-    "uglify-js-brunch": "^2.0.0",
-    "vue-brunch": "^2.0.1",
-    "vue-loader": "^13.7.0",
-    "vue-style-loader": "^4.1.1",
-    "vue-template-compiler": "^2.5.13"
+    "eslint-plugin-html": "^4.0.6",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-vue": "^4.7.1",
+    "rollup": "^0.66.3",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-vue": "^4.3.2",
+    "vue-template-compiler": "^2.5.17"
   },
   "files": [
     "LICENSE",
     "README.md",
     "package.json",
-    "src/"
-  ]
+    "src/",
+    "dist/"
+  ],
+  "homepage": "https://github.com/mubaidr/vue-swimlane#readme",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "swimlane",
+    "slider"
+  ],
+  "license": "MIT",
+  "main": "src/component/index.js",
+  "name": "vue-swimlane",
+  "peerDependencies": {
+    "vue": "^2.5.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubaidr/vue-swimlane.git"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "build:es": " --format es --file dist/vue-swimlane.esm.js -sourcemap",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/vue-swimlane.umd.js -sourcemap --name VueSwimlane",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vue-swimlane.min.js -sourcemap",
+    "dev": "cd src/docs && npm run dev && cd ../..",
+    "lint": "eslint --ext .js,.vue --fix ./src/"
+  },
+  "version": "0.3.6"
 }
