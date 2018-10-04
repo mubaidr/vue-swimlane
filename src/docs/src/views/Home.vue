@@ -14,7 +14,21 @@
             A Text Swimlane plugin for Vue.js to display a list of words as an animated text Swimlane.
           </h2>
           <br>
-
+          <a
+            href="https://github.com/mubaidr/vue-swimlane"
+            class="button is-primary"
+            title="Github Repository"
+            target="_blank">
+            <span>Github</span>
+          </a> &nbsp;
+          <a
+            href="https://github.com/mubaidr/vue-swimlane/tree/master/dist"
+            class="button is-primary"
+            title="Download"
+            target="_blank">
+            <span>Download</span>
+          </a>
+          <br><br>
           <p>
             <a href="https://patreon.com/mubaidr">
               <img
@@ -67,6 +81,7 @@
         class="playground-swimlane"/>
     </p>
 
+    <br>
     <h3 class="title is-3">Options</h3>
     <div class="columns">
       <div class="column">
@@ -86,7 +101,6 @@
               <input
                 v-model="options.circular"
                 type="checkbox"
-                value="true"
                 checked> Circular?
             </label>
           </div>
@@ -98,7 +112,6 @@
               <input
                 v-model="options.pauseOnHover"
                 type="checkbox"
-                value="true"
                 checked> Pause On Hover?
             </label>
           </div>
@@ -219,8 +232,8 @@ export default {
         pauseOnHover: false,
         rows: 3,
         scale: 1,
-        transitionDuration: 2000,
-        transitionDelay: 100,
+        transitionDuration: 1000,
+        transitionDelay: 50,
         transition: 'ease-out',
       },
     }

@@ -55,11 +55,9 @@
   },
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "build:es": " --format es --file dist/vue-swimlane.esm.js -sourcemap",
-    "build:umd": "rollup --config rollup.config.js --format umd --file dist/vue-swimlane.umd.js -sourcemap --name VueSwimlane",
-    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vue-swimlane.min.js -sourcemap",
+    "build-docs": "cd src/docs && npm run build && cd ../..",
     "dev": "cd src/docs && npm run dev && cd ../..",
     "lint": "eslint --ext .js,.vue --fix ./src/"
   },
-  "version": "0.3.7"
+  "version": "0.3.8"
 }

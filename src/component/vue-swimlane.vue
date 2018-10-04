@@ -39,7 +39,7 @@ export default {
     },
     transitionDelay: {
       type: Number,
-      default: 250,
+      default: 100,
     },
     transition: {
       type: String,
@@ -119,6 +119,8 @@ export default {
     },
   },
 
+  created() {},
+
   mounted() {
     this.animate()
   },
@@ -169,6 +171,8 @@ export default {
     },
 
     throttleToggleAnimation() {
+      if (!this.pauseOnHover) return
+
       clearTimeout(this.updatetimeoutId)
       debounce(this.toggleAnimation, this.transitionDelayNormalized, {
         leading: true,
