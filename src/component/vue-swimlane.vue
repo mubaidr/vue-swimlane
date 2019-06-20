@@ -3,13 +3,15 @@
     :style="listParentStyle"
     class="vue-swimlane"
     @mouseenter="throttleToggleAnimation"
-    @mouseleave="throttleToggleAnimation">
+    @mouseleave="throttleToggleAnimation"
+  >
     <ul :style="listStyle">
       <li
         v-for="(word, index) in words"
-        :style="itemStyle"
         :key="index"
-        v-html="word"/>
+        :style="itemStyle"
+        v-html="word"
+      />
     </ul>
   </div>
 </template>
@@ -46,6 +48,14 @@ export default {
       default: 'ease-out',
     },
     circular: {
+      type: Boolean,
+      default: false,
+    },
+    repeat: {
+      type: Boolean,
+      default: false,
+    },
+    continous: {
       type: Boolean,
       default: false,
     },
@@ -118,8 +128,6 @@ export default {
       return `height: ${this.itemHeight * this.itemRowsNormalized}px!important;`
     },
   },
-
-  created() {},
 
   mounted() {
     this.animate()
