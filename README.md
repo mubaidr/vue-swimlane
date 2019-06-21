@@ -38,9 +38,8 @@ Vue.use(VueSwimlane)
 Following options can be passed as props.
 
 - **words** - string[] - _required_: Array of tags or words to be used on display.
+- **continous** - bool (Default: false): If true, list continues forward, repeating the list.
 - **circular** - bool (Default: false): If true, list starts from the top after completion.
-- **repeat** - bool (Default: false): If true, lists start repeating from start.
-- **continous** - Alias for `repeat`
 - **pauseOnHover** - bool (Default: false): If true, animation will pause on mouse hover.
 - **rows** - int (Default: 1): Number of rows always visible at a time.
 - **scale** - float (Default: 1): Font size scaling relative to 16px.
