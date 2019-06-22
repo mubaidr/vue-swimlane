@@ -33,7 +33,7 @@
     </section>
 
     <section class="section">
-      <vue-swimlane :words="content" :scale="3" />
+      <vue-swimlane :words="content" :scale="2" :rows="3" />
 
       <h3 class="title is-3">How to use:</h3>
       <h4 class="subtitle is-4">Install using NPM</h4>

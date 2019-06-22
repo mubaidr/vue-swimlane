@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import debounce from 'lodash.debounce'
+// import debounce from 'lodash.debounce'
 
 export default {
   name: 'VueSwimlane',
@@ -25,6 +25,9 @@ export default {
   props: {
     words: {
       type: Array,
+      default: () => {
+        return []
+      },
       required: true,
     },
     rows: {
@@ -64,25 +67,69 @@ export default {
   data() {
     return {
       isPaused: false,
-      updatetimeoutId: null,
     }
   },
 
-  computed: {},
+  computed: {
+    listCount() {
+      return this.words.length
+    },
+
+    fontSize() {
+      return 16 * this.scale
+    },
+
+    itemHeight() {
+      return this.fontSize * 1.5
+    },
+
+    listHeight() {
+      return this.itemHeight * this.listCount
+    },
+
+    listParentHeight() {
+      return this.itemHeight * this.rows
+    },
+
+    itemStyle() {
+      return `font-size: ${this.fontSize}px;
+              height: ${this.itemHeight}px;`
+    },
+
+    listStyle() {
+      return `height: ${this.listHeight}px;
+              transition-property: transform;
+              transition-delay: ${this.transitionDelay}ms;
+              transition-duration: ${this.transitionDuration}ms;
+              transition-timing-function: ${this.transition};
+              will-change: transform;`
+    },
+
+    listParentStyle() {
+      return `height: ${this.listParentHeight}px;`
+    },
+  },
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    throttleToggleAnimation() {},
+  },
 }
 </script>
 
 <style>
 .vue-swimlane {
+  overflow: hidden !important;
 }
 
 .vue-swimlane ul {
+  overflow: hidden !important;
 }
 
 .vue-swimlane ul li {
+  text-align: center;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 </style>
