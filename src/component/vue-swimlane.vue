@@ -17,9 +17,6 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers'
-// import debounce from 'lodash.debounce'
-
 export default {
   name: 'VueSwimlane',
 

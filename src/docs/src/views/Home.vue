@@ -32,7 +32,7 @@
     </section>
 
     <section class="section">
-      <vue-swimlane :words="content" :scale="2" :rows="3" :continous="true" />
+      <vue-swimlane :words="content" :scale="2" :rows="3" />
 
       <hr />
 
@@ -63,6 +63,7 @@
 
       <br />
       <br />
+      <hr />
       <h3 class="title is-3">Playground</h3>
       <h4 class="subtitle is-4">Change options below to see the effect.</h4>
       <p>
@@ -193,6 +194,7 @@
       </div>
 
       <br />
+      <hr />
       <h3 class="title is-3">Styles?</h3>
       <p>
         Almost all the styling can be applied using your own class or using
@@ -205,6 +207,7 @@
       </p>
 
       <br />
+      <hr />
       <h3 class="title is-3">
         Found any bug or feature request?
         <a href="https://github.com/mubaidr/vue-swimlane/issues"
@@ -249,5 +252,7 @@ export default {
 
 <style>
 .playground-swimlane {
+  background-color: rebeccapurple;
+  color: #fff;
 }
 </style>

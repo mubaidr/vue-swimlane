@@ -8,9 +8,7 @@
   "bugs": {
     "url": "https://github.com/mubaidr/vue-swimlane/issues"
   },
-  "dependencies": {
-    "lodash.debounce": "^4.0.8"
-  },
+  "dependencies": {},
   "description": "A simple vuejs 2.0+ text swimlane plugin.",
   "devDependencies": {
     "eslint": "^5.16.0",

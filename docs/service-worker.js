@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/vue-swimlane/precache-manifest.bac5c98cb1ea4d57e6060f607771e8ca.js"
+  "/vue-swimlane/precache-manifest.718943336ed4db78649de059509c8c7d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "docs"});
