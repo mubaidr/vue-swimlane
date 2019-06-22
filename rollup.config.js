@@ -1,7 +1,7 @@
-import buble from 'rollup-plugin-buble'
-import vue from 'rollup-plugin-vue'
-import resolve from 'rollup-plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
+import vue from 'rollup-plugin-vue'
 
 export default {
   input: 'src/component/index.js',
@@ -10,19 +10,28 @@ export default {
       css: true,
       compileTemplate: true,
     }),
-    buble(),
-    resolve({
-      only: ['lodash.debounce'],
+    babel({
+      babelrc: false,
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            corejs: '3.0.0',
+            useBuiltIns: 'entry',
+          },
+        ],
+      ],
     }),
     commonjs(),
+    terser(),
   ],
   output: [
     {
-      file: 'dist/vue-swimlane.esm.js',
+      file: 'dist/vue-swimlane.esm.min.js',
       format: 'esm',
     },
     {
-      file: 'dist/vue-swimlane.umd.js',
+      file: 'dist/vue-swimlane.umd.min.js',
       format: 'umd',
       name: 'VueSwimlane',
     },

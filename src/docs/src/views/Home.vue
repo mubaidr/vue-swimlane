@@ -32,7 +32,7 @@
     </section>
 
     <section class="section">
-      <vue-swimlane :words="content" :scale="2" :rows="3" />
+      <vue-swimlane :words="content" :scale="2" :rows="3" :continous="true" />
 
       <hr />
 
