@@ -15,6 +15,7 @@
   "rules": {
     "linebreak-style": "off",
     "no-console": "off",
-    "semi": "off"
+    "semi": "off",
+    "vue/no-v-html": "off"
   }
 }

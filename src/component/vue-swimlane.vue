@@ -2,8 +2,8 @@
   <div
     :style="listParentStyle"
     class="vue-swimlane"
-    @mouseenter="throttleToggleAnimation"
-    @mouseleave="throttleToggleAnimation"
+    @mouseenter="toggleAnimation"
+    @mouseleave="toggleAnimation"
   >
     <ul :style="listStyle">
       <li
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { setTimeout } from 'timers'
 // import debounce from 'lodash.debounce'
 
 export default {
@@ -66,7 +67,9 @@ export default {
 
   data() {
     return {
+      listTop: 0,
       isPaused: false,
+      isMovingBackwards: false,
     }
   },
 
@@ -76,6 +79,7 @@ export default {
     },
 
     fontSize() {
+      // scale from 16px font size
       return 16 * this.scale
     },
 
@@ -98,11 +102,11 @@ export default {
 
     listStyle() {
       return `height: ${this.listHeight}px;
-              transition-property: transform;
               transition-delay: ${this.transitionDelay}ms;
               transition-duration: ${this.transitionDuration}ms;
               transition-timing-function: ${this.transition};
-              will-change: transform;`
+              will-change: transform;
+              transform: translateY(${this.listTop}px)`
     },
 
     listParentStyle() {
@@ -110,10 +114,59 @@ export default {
     },
   },
 
-  mounted() {},
+  mounted() {
+    setTimeout(this.updateState, this.transitionDelay)
+  },
 
   methods: {
-    throttleToggleAnimation() {},
+    updateState() {
+      // check if enough keywords or is not paused
+      if (this.listCount <= this.rows) return
+      if (this.isPaused) return
+
+      // update list state
+      if (this.isMovingBackwards) {
+        this.listTop += this.itemHeight
+      } else {
+        this.listTop -= this.itemHeight
+      }
+
+      if (this.circular) {
+        // cricular animation
+        if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
+          this.listTop += this.itemHeight
+          this.isMovingBackwards = !this.isMovingBackwards
+        }
+
+        if (this.listTop > this.rows * this.itemHeight) {
+          this.listTop = 0
+          this.isMovingBackwards = !this.isMovingBackwards
+        }
+      } else if (this.continous) {
+        // continous animation
+      }
+      // one way animation
+      else if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
+        this.listTop = 0
+      }
+
+      // set time out for next update
+      this.timeOutId = window.setTimeout(() => {
+        this.updateState()
+      }, this.transitionDuration + this.transitionDelay)
+    },
+
+    toggleAnimation() {
+      if (this.pauseOnHover) {
+        this.isPaused = !this.isPaused
+
+        if (this.isPaused) {
+          clearTimeout(this.timeOutId)
+        } else {
+          this.updateState()
+        }
+      }
+    },
   },
 }
 </script>
@@ -124,7 +177,9 @@ export default {
 }
 
 .vue-swimlane ul {
+  list-style: none !important;
   overflow: hidden !important;
+  transition-property: transform !important;
 }
 
 .vue-swimlane ul li {

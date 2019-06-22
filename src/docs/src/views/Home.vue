@@ -8,8 +8,7 @@
             Vue-Swimlane
           </h1>
           <h2 class="subtitle is-3">
-            A Text Swimlane plugin for Vue.js to display a list of words as an
-            animated text swim lane.
+            Display a list of words as an animated text swim lane.
           </h2>
           <a
             href="https://github.com/mubaidr/vue-swimlane"
@@ -33,8 +32,8 @@
     </section>
 
     <section class="section">
-      <vue-swimlane :words="content" :scale="2" :rows="3" />
-
+      <vue-swimlane :words="content" :scale="2" :rows="3" :circular="true" />
+      <hr />
       <h3 class="title is-3">How to use:</h3>
       <h4 class="subtitle is-4">Install using NPM</h4>
       <code>npm install vue-swimlane --save</code><br />
@@ -241,8 +240,6 @@ export default {
     return {
       content: [
         'Vue Swimlane',
-        'is an',
-        'Awesome',
         'swimlane',
         'plugin',
         'for',
