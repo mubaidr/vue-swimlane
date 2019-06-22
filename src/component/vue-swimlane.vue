@@ -7,7 +7,7 @@
   >
     <ul :style="listStyle">
       <li
-        v-for="(word, index) in words"
+        v-for="(word, index) in list"
         :key="index"
         :style="itemStyle"
         v-html="word"
@@ -64,6 +64,7 @@ export default {
 
   data() {
     return {
+      list: [],
       listTop: 0,
       isPaused: false,
       isMovingBackwards: false,
@@ -72,7 +73,7 @@ export default {
 
   computed: {
     listCount() {
-      return this.words.length
+      return this.list.length
     },
 
     fontSize() {
@@ -111,6 +112,19 @@ export default {
     },
   },
 
+  // update word list
+  watch: {
+    words(val) {
+      this.list = val
+    },
+  },
+
+  // copy word list
+  created() {
+    this.list = this.words
+  },
+
+  // initiate animation
   mounted() {
     setTimeout(this.updateState, this.transitionDelay)
   },
@@ -141,6 +155,10 @@ export default {
         }
       } else if (this.continous) {
         // continous animation
+
+        if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
+          console.log('yay array reverse')
+        }
       }
       // one way animation
       else if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
@@ -153,6 +171,7 @@ export default {
       }, this.transitionDuration + this.transitionDelay)
     },
 
+    // pause/resume animaiton on hover
     toggleAnimation() {
       if (this.pauseOnHover) {
         this.isPaused = !this.isPaused
