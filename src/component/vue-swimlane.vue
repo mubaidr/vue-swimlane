@@ -134,11 +134,11 @@ export default {
       if (this.circular) {
         // cricular animation
         if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
-          this.listTop += this.itemHeight
+          this.listTop += this.itemHeight * (this.rows - 1)
           this.isMovingBackwards = !this.isMovingBackwards
         }
 
-        if (this.listTop > this.rows * this.itemHeight) {
+        if (this.listTop > -this.itemHeight) {
           this.listTop = 0
           this.isMovingBackwards = !this.isMovingBackwards
         }

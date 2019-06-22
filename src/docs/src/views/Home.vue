@@ -32,8 +32,10 @@
     </section>
 
     <section class="section">
-      <vue-swimlane :words="content" :scale="2" :rows="3" :circular="true" />
+      <vue-swimlane :words="content" :scale="2" :rows="3" :continous="true" />
+
       <hr />
+
       <h3 class="title is-3">How to use:</h3>
       <h4 class="subtitle is-4">Install using NPM</h4>
       <code>npm install vue-swimlane --save</code><br />
@@ -66,8 +68,6 @@
       <p>
         <vue-swimlane
           :words="textArray"
-          :continous="options.continous"
-          :circular="options.circular"
           :rows="options.rows"
           :scale="options.scale"
           :transition-duration="options.transitionDuration"
@@ -86,24 +86,6 @@
             <label class="label">Text</label>
             <div class="control">
               <input v-model="options.text" type="text" class="input" />
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-              <label class="checkbox is-primary">
-                <input v-model="options.continous" type="checkbox" checked />
-                Continous?
-              </label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-              <label class="checkbox is-primary">
-                <input v-model="options.circular" type="checkbox" />
-                Circular?
-              </label>
             </div>
           </div>
 
@@ -247,9 +229,7 @@ export default {
         '<a href="https://vuejs.org">VueJS</a>',
       ],
       options: {
-        text: 'This plugin displays a list of words as a Swimlane',
-        continous: true,
-        circular: false,
+        text: 'Plugin to display list of words as Swimlane',
         pauseOnHover: true,
         rows: 3,
         scale: 1,
