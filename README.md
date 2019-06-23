@@ -31,14 +31,14 @@ Vue.use(VueSwimlane)
 
 ### Markup
 
-`<vue-swimlane :words="['Some', 'Keywords', 'Array', 'And Thats it!']"></vue-swimlane>`
+`<vue-swimlane :words="['Some', 'Keywords', 'Array']"></vue-swimlane>`
 
 ## Options
 
 Following options can be passed as props.
 
 - **words** - string[] - _required_: Array of tags or words to be used on display.
-- **continous** - bool (Default: false): If true, list continues forward, repeating the list.
+- **continous** - bool (Default: false): If true, list continues forward, repeating the list. (Bugged, animation not working)
 - **circular** - bool (Default: false): If true, list starts from the top after completion.
 - **pauseOnHover** - bool (Default: false): If true, animation will pause on mouse hover.
 - **rows** - int (Default: 1): Number of rows always visible at a time.

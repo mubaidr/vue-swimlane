@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section">
-      <vue-swimlane :words="content" :scale="2" :rows="3" />
+      <vue-swimlane :words="content" :scale="2" :rows="3" :circular="true" />
 
       <hr />
 

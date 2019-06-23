@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d2c58efd02378bcf8327",
+    "revision": "e4e0ab142d61dc853f67",
     "url": "/vue-swimlane/css/app.287de07c.css"
   },
   {
-    "revision": "d2c58efd02378bcf8327",
-    "url": "/vue-swimlane/js/app.071f115a.js"
+    "revision": "e4e0ab142d61dc853f67",
+    "url": "/vue-swimlane/js/app.61cf39bf.js"
   },
   {
     "revision": "4eb97f8223b5733c6689",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/vue-swimlane/js/chunk-vendors.aa0526b0.js"
   },
   {
-    "revision": "217db019fb739f23dd15bb3e2caa233a",
+    "revision": "a4f8eb06bc31283839e40b6d756a32ef",
     "url": "/vue-swimlane/index.html"
   },
   {

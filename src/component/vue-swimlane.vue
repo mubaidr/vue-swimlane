@@ -155,9 +155,11 @@ export default {
         }
       } else if (this.continous) {
         // continous animation
+        // BUG: current implmentation does not allow animation :(
 
         if (this.listTop < this.rows * this.itemHeight - this.listHeight) {
-          console.log('yay array reverse')
+          this.listTop += this.itemHeight
+          this.list.push(this.list.shift())
         }
       }
       // one way animation

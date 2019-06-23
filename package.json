@@ -61,5 +61,5 @@
     "dev": "cd src/docs && npm run dev && cd ../..",
     "lint": "eslint --ext .js,.vue --fix ./src/component"
   },
-  "version": "0.4.1"
+  "version": "0.4.2"
 }
