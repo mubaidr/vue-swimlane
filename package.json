@@ -13,7 +13,6 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "7.4.5",
-    "core-js": "^3.1.4",
     "eslint": "^6.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^5.0.0",
@@ -61,5 +60,5 @@
     "dev": "cd src/docs && npm run dev && cd ../..",
     "lint": "eslint --ext .js,.vue --fix ./src/component"
   },
-  "version": "0.4.2"
+  "version": "0.4.3"
 }
