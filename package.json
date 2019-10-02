@@ -12,7 +12,7 @@
   "description": "A simple vuejs 2.0+ text swimlane plugin.",
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/preset-env": "7.6.2",
     "eslint": "^6.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^5.0.0",
