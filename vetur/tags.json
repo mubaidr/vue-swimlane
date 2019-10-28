@@ -1,0 +1,17 @@
+{
+  "vue-swimlane":{
+    "attributes":[
+      "words",
+      "continous",
+      "circular",
+      "pause-on-hover",
+      "rows",
+      "scale",
+      "transition-duration",
+      "transition-delay",
+      "transition"
+    ],
+    "subtags":[],
+    "description": "Display a list of words as an animated text swim lane."
+  }
+}
