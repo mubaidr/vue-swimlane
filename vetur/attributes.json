@@ -1,0 +1,38 @@
+{
+  "vue-swimlane/words":{
+    "type": "string[]",
+    "description": "Required: Array of tags or words to be used on display."
+  },
+  "vue-swimlane/continous":{
+    "type": "boolean",
+    "description": "[Default: false]: If true, list continues forward, repeating the list."
+  },
+  "vue-swimlane/circular":{
+    "type": "boolean",
+    "description": "[Default: false]: If true, list starts from the top after completion."
+  },
+  "vue-swimlane/pause-on-hover":{
+    "type": "boolean",
+    "description": "[Default: true]: If true, animation will pause on mouse hover."
+  },
+  "vue-swimlane/rows":{
+    "type": "number",
+    "description": "[Default: 1]: Number of rows always visible at a time."
+  },
+  "vue-swimlane/scale":{
+    "type": "number",
+    "description": "[Default: 1]: Font size scaling relative to 16px."
+  },
+  "vue-swimlane/transition-duration":{
+    "type": "number",
+    "description": "[Default: 500]: Animation duration for rows."
+  },
+  "vue-swimlane/transition-delay":{
+    "type": "number",
+    "description": "[Default: 250]: Delays between each animation duration in ms."
+  },
+  "vue-swimlane/transition":{
+    "type": "string",
+    "description": "[Default: ease-out]: css transition name."
+  }
+}
