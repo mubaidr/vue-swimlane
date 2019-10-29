@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "shadskii",
+      "name": "Jake",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7563237?v=4",
+      "profile": "http://www.linkedin.com/in/jacob-k-hassel/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vue-swimlane",
+  "projectOwner": "mubaidr",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
